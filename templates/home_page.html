@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
+
+    <style>
+        h1 {
+         color: black;
+        }
+
+        body {
+        background-color: #90EE90;
+        }
+    </style>
 </head>
+
 <body>
+    <h1>Welcome to plant disease detection system</h1>
+
+    <section>
+        how to use the model:
+        we got 4 categories of plants, and a total of identified 19 diseases
+    </section>
+    <br>
+
+    <form method="post" enctype="multipart/form-data">
+        <label for="imageUpload">Upload an image:</label>
+        <br>
+        <input type="file" id="imageUpload" name="image" accept="image/*" onchange="previewImage(event)">
+        <br><br>
+        <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 300px; height: auto; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('imagePreview');
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+    <form>
+        for accessing your webcam
+    </form>
 
 </body>
 </html>
