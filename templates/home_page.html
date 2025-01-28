@@ -11,26 +11,47 @@
 
         body {
         background-color: #90EE90;
+            width: 1024px;
+            border: red 2px solid;
+            justify: center;
+<!--        margin-left: auto;-->
+<!--        margin-right: auto;-->
         }
+
+        grid_1, grid_2, grid_3, grid_4, grid_5 {
+            display: flex;
+        }
+
+<!--        .Main_Container {-->
+<!--            display: grid;-->
+<!--            grid-template-rows: auto auto 100px;-->
+<!--            grid-gap: 20px;-->
+<!--            padding: 20px;-->
+<!--            max-width: 1200px;-->
+<!--            margin: auto;-->
+<!--        }-->
     </style>
 </head>
 
-<body>
-    <h1>Welcome to plant disease detection system</h1>
+<body class="Main_Container">
+    <h1 class="grid_1">
+        Welcome to Plant Disease Detection System
+    </h1>
 
-    <section>
+    <section class="grid_2">
         how to use the model:
         we got 4 categories of plants, and a total of identified 19 diseases
     </section>
+
     <br>
 
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" class="grid_3">
         <label for="imageUpload">Upload an image:</label>
         <br>
         <input type="file" id="imageUpload" name="image" accept="image/*" onchange="previewImage(event)">
         <br><br>
         <img id="imagePreview" src="" alt="Image Preview" style="display: none; max-width: 300px; height: auto; border: 1px solid #ddd; border-radius: 4px; padding: 5px;">
-        <button type="submit">Submit</button>
+        <button type="submit">Predict</button>
     </form>
 
     <script>
@@ -49,9 +70,13 @@
         }
     </script>
 
-    <form>
+    <form class="grid_4">
         for accessing your webcam
     </form>
+
+    <footer class="grid_5">
+        @COPYRIGHTS - Group 3 Jiawen, Yen Yi, Yoshana
+    </footer>
 
 </body>
 </html>
