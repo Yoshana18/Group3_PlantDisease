@@ -6,100 +6,61 @@
 
     <style>
         * {
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-        }
+            margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            width: 100%; margin: auto;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+            width: 100%; margin: auto; font-family: Arial, sans-serif;
+            background: url('image/Background.png') no-repeat center center fixed;
+            background-size: cover; }
 
-        .Main_Container {
-            display: grid;
-            grid-template-rows: 100px auto 100px;
-        }
+        h1, .grid_3 {
+            background: rgba(255, 255, 255, 0.6); /* Light transparency */
+            backdrop-filter: blur(5px); /* Softens the background */
+            padding: 20px; text-align: center;
+            color: black; justify-content: center;}
 
         h1 {
-            display: flex;
-            background-color: #66FF99;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: black;
-            text-align: center;
-        }
+            display: flex; justify-content: center; align-items: center;
+            padding: 20px; color: black; text-align: center; }
+
+        .Main_Container {
+            display: grid; grid-template-rows: 100px auto 100px; }
 
         /* Grid 2 - Main Content */
         .grid_2 {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-            padding: 40px;
-        }
+            display: flex; justify-content: space-between; align-items: center;
+            gap: 20px; padding: 40px; }
 
         /* Form container */
         .grid_2A {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            width: 50%;
-            height: 412px;
-            padding: 20px;
-<!--            border: 2px solid black;-->
-        }
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; background-color: #336633; width: 50%;
+            height: 412px; padding: 20px; border-radius: 25px; }
 
         #imagePreview {
-            display: none;
-            max-width: 300px;
-            height: auto;
-            border-radius: 4px;
-            padding: 5px;
-            margin-top: 10px;
-<!--            border: 1px solid #ddd;-->
-        }
+            display: none; max-width: 300px; height: auto; border-radius: 4px;
+            padding: 5px; margin-top: 10px; }
 
         /* Categories Section */
         .grid_2B {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            width: 50%;
-            padding: 20px;
-<!--            border: 2px solid black;-->
-        }
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; background-color: #336633;
+            width: 50%; padding: 20px; border-radius: 25px; }
 
         ul {
-            text-decoration: none;
-            list-style-type: none;
-            padding: 10px;
-        }
+            text-decoration: none; list-style-type: none; padding: 10px; }
 
         ul li {
-            margin: 5px 0;
-        }
+            margin: 5px 0;}
 
         .grid_2B img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 10px;
-        }
+            max-width: 100%; height: auto; margin-top: 10px; }
 
-        /* Footer */
-        .grid_3 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background-color: #66FF99;
-            font-weight: bold;
-        }
+        .up_c
+        {
+            background-color: #7CFC00; width: auto; height: auto;
+            justify-content: center; padding: 15px;  border-radius: 15px;}
+
         @media (max-width: 600px) {
             .grid_2 {
                 flex-direction: column;
@@ -124,30 +85,29 @@
             .grid_2A, .grid_2B {
                 width: 80%;
             }
-
-        .up_c
-        {
-            background-color: red;
-
         }
+
     </style>
 </head>
 
 <body>
     <div class="Main_Container">
         <h1 class="grid_1">
-            Welcome to Plant Disease Detection System
+            Welcome to Leaf Doctor 
         </h1>
 
         <div class="grid_2">
             <!-- Image Upload Section -->
             <section class="grid_2A">
                 <form method="post" enctype="multipart/form-data">
-                    <label for="imageUpload" class="up_c">Upload an image of the Leaf here!</label>
+                    <label for="imageUpload"> Upload an image of the Leaf here!</label>
                     <br>
-                    <input type="file" id="imageUpload" name="image" accept="image/*" onchange="previewImage(event)" class="up_c">
                     <br>
-                    <img id="imagePreview" src="" alt="Image Preview" class="up_c">
+                    <div  class="up_c">
+                        <input type="file" id="imageUpload" name="image" accept="image/*" onchange="previewImage(event)">
+                        <br>
+                        <img id="imagePreview" src="" alt="Image Preview" class="up_c">
+                    </div>
                     <br>
                     <button type="submit">Predict</button>
                 </form>
@@ -162,7 +122,7 @@
                     <li>Pepper Bell</li>
                     <li>Grape</li>
                 </ul>
-<!--                <img src="Image/Leaf.png" alt="leaf">-->
+                <img src="Image/Leaf.png" alt="leaf">
             </section>
         </div>
 
