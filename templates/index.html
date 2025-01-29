@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Leaf-Home</title>
-    <link rel="stylesheet" href="CSS/index.css">
+<!--    <link rel="stylesheet" href="CSS/index.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
 </head>
 
 <body>
@@ -57,24 +58,41 @@
             <div id="popupTomato" class="popup">
                 <div class="popup-content">
                     <span class="close-btn" onclick="closePopup('popupTomato')">×</span>
-                    <img src="templates/image/Background.png" alt="Popup Image">
-                    <p>This is some text about Tomato.</p>
+                    <div>
+                        These are the reference images for 8 types of leaf disease in Tomato
+                        <br>
+                        <img src="image/Tomato/Tomato_Bacterial_spot(2).JPG" alt="Popup Image">
+                        <img src="image/Tomato/Tomato_Early_blight(2).JPG" alt="Popup Image">
+                        <img src="image/Tomato/Tomato_Late_blight(2).JPG" alt="Popup Image">
+                        <img src="image/Tomato/Tomato_Leaf_Mold(2).JPG" alt="Popup Image">
+                        <img src="image/Tomato/Tomato_Septoria_leaf_spot(2).JPG" alt="Popup Image">
+                        <img src="image/Tomato/Tomato_Spider_mites_Two_spotted_spider_mite(2).JPG" alt="Popup Image">
+                        <img src="image/Tomato/Tomato_Target_Spot(2).JPG" alt="Popup Image">
+                        <img src="image/Tomato/Tomato_Tomato_mosaic_virus(2).JPG" alt="Popup Image">
+                    </div>
                 </div>
             </div>
 
             <div id="popupPotato" class="popup">
                 <div class="popup-content">
                     <span class="close-btn" onclick="closePopup('popupPotato')">×</span>
-                    <img src="templates/image/Background.png" alt="Popup Image">
-                    <p>This is some text about Potato.</p>
+                    <div>
+                        These are the reference images for 2 types of leaf disease in Potato
+                        <br>
+                        <img src="image/Potato/Potato_Early_blight(2).JPG" alt="Popup Image">
+                        <img src="image/Potato/Potato_Late_blight(2).JPG" alt="Popup Image">
+                    </div>
                 </div>
             </div>
 
             <div id="popupPepper" class="popup">
                 <div class="popup-content">
                     <span class="close-btn" onclick="closePopup('popupPepper')">×</span>
-                    <img src="templates/image/Background.png" alt="Popup Image">
-                    <p>This is some text about Pepper Bell.</p>
+                    <div>
+                        These are the reference images for a type of leaf disease in Pepper Bell
+                        <br>
+                        <img src="image/Pepper Bell/Pepper_bell_Bacterial_spot(2).JPG" alt="Popup Image">
+                    </div>
                 </div>
             </div>
 
@@ -82,8 +100,11 @@
                 <div class="popup-content">
                     <span class="close-btn" onclick="closePopup('popupGrape')">×</span>
                     <div>
-                        This is some text about Grape. HELLO
-                        <img src="..templates/image/Background.png" alt="Popup Image">
+                        These are the reference images for the 3 classes of leaf diseases in Grapes.
+                        <br>
+                        <img src="image/Grapes/Grape_Black_rot(2).JPG" alt="Popup Image">
+                        <img src="image/Grapes/Grape_Esca_(Black_Measles)(2).JPG" alt="Popup Image">
+                        <img src="image/Grapes/Grape_Leaf_blight_(Isariopsis_Leaf_Spot)(2).JPG" alt="Popup Image">
                     </div>
                 </div>
             </div>

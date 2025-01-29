@@ -16,9 +16,9 @@
 #         print(file_path)
 #         return render_template('index.html')
 
-# import flast module
-from flask import Flask
-from flask import render_template
+# import flask modules
+from flask import Flask, render_template, url_for
+
 
 app = Flask(__name__)
 
