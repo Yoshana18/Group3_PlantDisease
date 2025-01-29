@@ -1,28 +1,144 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Image Popup</title>-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="styles.css">&ndash;&gt;-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--        }-->
+
+<!--        .image-container {-->
+<!--            margin: 20px;-->
+<!--        }-->
+
+<!--        .image {-->
+<!--            width: 200px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        .popup {-->
+<!--            display: none; /* Hidden by default */-->
+<!--            position: fixed;-->
+<!--            z-index: 1;-->
+<!--            left: 0;-->
+<!--            top: 0;-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--            background-color: rgba(0, 0, 0, 0.8);-->
+<!--            overflow: auto;-->
+<!--            padding-top: 60px;-->
+<!--        }-->
+
+<!--        .popup-content {-->
+<!--            background-color: #fff;-->
+<!--            margin: 5% auto;-->
+<!--            padding: 20px;-->
+<!--            border: 1px solid #888;-->
+<!--            width: 80%;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        .popup img {-->
+<!--            max-width: 100%;-->
+<!--            height: auto;-->
+<!--        }-->
+
+<!--        .close-btn {-->
+<!--            color: #aaa;-->
+<!--            font-size: 40px;-->
+<!--            font-weight: bold;-->
+<!--            position: absolute;-->
+<!--            top: 10px;-->
+<!--            right: 25px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        .close-btn:hover,-->
+<!--        .close-btn:focus {-->
+<!--            color: black;-->
+<!--            text-decoration: none;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--    </style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="image-container">-->
+<!--        <img src="templates/image/Leaf.png" alt="Image" class="image" onclick="openPopup()">-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; The Popup &ndash;&gt;-->
+<!--    <div id="popup" class="popup">-->
+<!--        <div class="popup-content">-->
+<!--            <span class="close-btn" onclick="closePopup()">×</span>-->
+<!--            <img src="templates/image/Background.png" alt="Popup Image">-->
+<!--            <p>This is some text about the image.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+<!--&lt;!&ndash;    <script src="script.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;    // Function to open the popup&ndash;&gt;-->
+<!--<script>-->
+<!--    function openPopup() {-->
+<!--        document.getElementById("popup").style.display = "block"; }-->
+
+<!--&lt;!&ndash;    // Function to close the popup&ndash;&gt;-->
+<!--    function closePopup() {-->
+<!--        document.getElementById("popup").style.display = "none"; }-->
+<!--</script>-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Popup</title>
-<!--    <link rel="stylesheet" href="styles.css">-->
+    <title>Plant Categories</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
 
-        .image-container {
-            margin: 20px;
+        .grid_2B {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 20px; /* Spacing between boxes */
+            background-color: #336633;
+            padding: 20px;
+            border-radius: 25px;
+            width: 80%;
+            margin: auto;
         }
 
-        .image {
-            width: 200px;
+        .plant-box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .plant-box img {
+            width: 100px;
             cursor: pointer;
+            display: block;
+            margin: 10px auto;
         }
 
+        /* Popup Styles */
         .popup {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             z-index: 1;
             left: 0;
@@ -36,11 +152,12 @@
 
         .popup-content {
             background-color: #fff;
-            margin: 5% auto;
+            margin: auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 80%;
+            width: 50%;
             text-align: center;
+            border-radius: 10px;
         }
 
         .popup img {
@@ -58,40 +175,77 @@
             cursor: pointer;
         }
 
-        .close-btn:hover,
-        .close-btn:focus {
+        .close-btn:hover {
             color: black;
-            text-decoration: none;
-            cursor: pointer;
         }
     </style>
-
 </head>
 <body>
-    <div class="image-container">
-        <img src="templates/image/Leaf.png" alt="Image" class="image" onclick="openPopup()">
-    </div>
 
-    <!-- The Popup -->
-    <div id="popup" class="popup">
+    <section class="grid_2B">
+        <div class="plant-box" id="tomato">
+            <p>Tomato</p>
+            <img src="image/Tomato.png" alt="Tomato" class="body_img" onclick="openPopup('popupTomato')">
+        </div>
+
+        <div class="plant-box" id="potato">
+            <p>Potato</p>
+            <img src="image/Potato.png" alt="Potato" class="body_img" onclick="openPopup('popupPotato')">
+        </div>
+
+        <div class="plant-box" id="pepper">
+            <p>Pepper Bell</p>
+            <img src="image/Pepper_Bell.png" alt="Pepper Bell" class="body_img" onclick="openPopup('popupPepper')">
+        </div>
+
+        <div class="plant-box" id="grape">
+            <p>Grape</p>
+            <img src="image/Grape.png" alt="Grape" class="body_img" onclick="openPopup('popupGrape')">
+        </div>
+    </section>
+
+    <!-- Popups -->
+    <div id="popupTomato" class="popup">
         <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">×</span>
+            <span class="close-btn" onclick="closePopup('popupTomato')">×</span>
             <img src="templates/image/Background.png" alt="Popup Image">
-            <p>This is some text about the image.</p>
+            <p>This is some text about Tomato.</p>
         </div>
     </div>
 
+    <div id="popupPotato" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popupPotato')">×</span>
+            <img src="templates/image/Background.png" alt="Popup Image">
+            <p>This is some text about Potato.</p>
+        </div>
+    </div>
+
+    <div id="popupPepper" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popupPepper')">×</span>
+            <img src="templates/image/Background.png" alt="Popup Image">
+            <p>This is some text about Pepper Bell.</p>
+        </div>
+    </div>
+
+    <div id="popupGrape" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('popupGrape')">×</span>
+            <img src="templates/image/Background.png" alt="Popup Image">
+            <p>This is some text about Grape.</p>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = "block";
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
-
-<!--    <script src="script.js"></script>-->
-<!--    // Function to open the popup-->
-<script>
-    function openPopup() {
-        document.getElementById("popup").style.display = "block"; }
-
-<!--    // Function to close the popup-->
-    function closePopup() {
-        document.getElementById("popup").style.display = "none"; }
-</script>

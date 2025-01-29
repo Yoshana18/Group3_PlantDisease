@@ -9,17 +9,17 @@
 <body>
     <div class="Main_Container">
         <h1 class="grid_1">
-            Welcome to Leaf Doctor
+            Welcome to Leaf Doctor!
         </h1>
 
         <div class="grid_2">
             <!-- Image Upload Section -->
             <section class="grid_2A">
                 <form method="post" enctype="multipart/form-data">
-                    <label for="imageUpload"> Upload an image of the Leaf here!</label>
+                    <label for="imageUpload" class="text"> Upload an image of the Leaf here!</label>
                     <br>
                     <br>
-                    <div  class="up_c">
+                    <div class="up_c">
                         <input type="file" id="imageUpload" name="image" accept="image/*" onchange="previewImage(event)">
                         <br>
                         <img id="imagePreview" src="" alt="Image Preview" class="up_c">
@@ -31,76 +31,66 @@
 
             <!-- Information Section -->
             <section class="grid_2B">
-                <div class="grid_2B_1">
-                    <p>Information of Plant Categories and Types of Leaf Diseases:</p>
+                <p class="text"> Information of Plant Categories & Leaf Diseases: </p>
+                <br>
+                <div class="plant-box" id="tomato">
+                    <p>Tomato</p>
+                    <img src="image/Tomato.png" alt="Tomato" class="body_img" onclick="openPopup('popupTomato')">
+                </div>
+
+                <div class="plant-box" id="potato">
+                    <p>Potato</p>
+                    <img src="image/Potato.png" alt="Potato" class="body_img" onclick="openPopup('popupPotato')">
+                </div>
+
+                <div class="plant-box" id="pepper">
+                    <p>Pepper Bell</p>
+                    <img src="image/Pepper_Bell.png" alt="Pepper Bell" class="body_img" onclick="openPopup('popupPepper')">
+                </div>
+
+                <div class="plant-box" id="grape">
+                    <p>Grape</p>
+                    <img src="image/Grape.png" alt="Grape" class="body_img" onclick="openPopup('popupGrape')">
+                </div>
+            </section>
+
+            <div id="popupTomato" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup('popupTomato')">×</span>
+                    <img src="templates/image/Background.png" alt="Popup Image">
+                    <p>This is some text about Tomato.</p>
+                </div>
+            </div>
+
+            <div id="popupPotato" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup('popupPotato')">×</span>
+                    <img src="templates/image/Background.png" alt="Popup Image">
+                    <p>This is some text about Potato.</p>
+                </div>
+            </div>
+
+            <div id="popupPepper" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup('popupPepper')">×</span>
+                    <img src="templates/image/Background.png" alt="Popup Image">
+                    <p>This is some text about Pepper Bell.</p>
+                </div>
+            </div>
+
+            <div id="popupGrape" class="popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup('popupGrape')">×</span>
                     <div>
-                        <li>Tomato</li>
-                        <li>Potato</li>
-                        <li>Pepper Bell</li>
-                        <li>Grape</li>
+                        This is some text about Grape. HELLO
+                        <img src="..templates/image/Background.png" alt="Popup Image">
                     </div>
                 </div>
-
-                <div class="grid_2B_2">
-                    <p>Types of Leaf Diseases:</p>
-                </div>
-
-                <section>
-
-                </section>
-
-                <section>
-                    <li>Tomato<img src="image/Tomato.png" alt="tomato" class="body_img" onclick="openPopup()"></li>
-                    <nav class="popup">
-                        <div class="popup-content">
-                            <span class="close-btn" onclick="closePopup()">×</span>
-                            <img src="templates/image/Background.png" alt="Popup Image">
-                            <p>This is some text about the image.</p>
-                        </div>
-                    </nav>
-                </section>
-
-                <section>
-                    <li>Potato<img src="image/Potato.png" alt="potato" class="body_img" onclick="openPopup()"></li>
-                    <nav class="popup">
-                        <div class="popup-content">
-                            <span class="close-btn" onclick="closePopup()">×</span>
-                            <img src="templates/image/Background.png" alt="Popup Image">
-                            <p>This is some text about the image.</p>
-                        </div>
-                    </nav>
-                </section>
-
-                <section>
-                    <li>Pepper Bell<img src="image/Pepper_Bell.png" alt="pepper bell" class="body_img" onclick="openPopup()"></li>
-                    <nav class="popup">
-                        <div class="popup-content">
-                            <span class="close-btn" onclick="closePopup()">×</span>
-                            <img src="templates/image/Background.png" alt="Popup Image">
-                            <p>This is some text about the image.</p>
-                        </div>
-                    </nav>
-
-                </section>
-
-                <section>
-                    <li>Grape<img src="image/Grape.png" alt="grape" class="body_img" onclick="openPopup()"></li>
-                    <nav class="popup">
-                        <div class="popup-content">
-                            <span class="close-btn" onclick="closePopup()">×</span>
-                            <img src="templates/image/Background.png" alt="Popup Image">
-                            <p>This is some text about the image.</p>
-                        </div>
-                    </nav>
-
-                </section>
-
-
-            </section>
+            </div>
         </div>
 
         <footer class="grid_3">
-            @COPYRIGHTS - Group 3 Jiawen, Yen Yi, Yoshana
+            @COPYRIGHTS - Group 3: Jiawen, Yen Yi, Yoshana
         </footer>
     </div>
 
@@ -119,11 +109,13 @@
             }
         }
 
-        function openPopup() {
-            document.getElementById("popup").style.display = "block"; }
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = "block"; }
 
-        function closePopup() {
-            document.getElementById("popup").style.display = "none"; }
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = "none"; }
+
     </script>
+
 </body>
 </html>
