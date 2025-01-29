@@ -3,97 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Leaf-Home</title>
-
-    <style>
-        * {
-            margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            width: 100%; margin: auto; font-family: Arial, sans-serif;
-            background: url('image/Background.png') no-repeat center center fixed;
-            background-size: cover; }
-
-        h1, .grid_3 {
-            background: rgba(255, 255, 255, 0.6); /* Light transparency */
-            backdrop-filter: blur(5px); /* Softens the background */
-            padding: 20px; text-align: center;
-            color: black; justify-content: center;}
-
-        h1 {
-            display: flex; justify-content: center; align-items: center;
-            padding: 20px; color: black; text-align: center; }
-
-        .Main_Container {
-            display: grid; grid-template-rows: 100px auto 100px; }
-
-        /* Grid 2 - Main Content */
-        .grid_2 {
-            display: flex; justify-content: space-between; align-items: center;
-            gap: 20px; padding: 40px; }
-
-        /* Form container */
-        .grid_2A {
-            display: flex; flex-direction: column; align-items: center;
-            justify-content: center; background-color: #336633; width: 50%;
-            height: 412px; padding: 20px; border-radius: 25px; }
-
-        #imagePreview {
-            display: none; max-width: 300px; height: auto; border-radius: 4px;
-            padding: 5px; margin-top: 10px; }
-
-        /* Categories Section */
-        .grid_2B {
-            display: flex; flex-direction: column; align-items: center;
-            justify-content: center; background-color: #336633;
-            width: 50%; padding: 20px; border-radius: 25px; }
-
-        ul {
-            text-decoration: none; list-style-type: none; padding: 10px; }
-
-        ul li {
-            margin: 5px 0;}
-
-        .grid_2B img {
-            max-width: 100%; height: auto; margin-top: 10px; }
-
-        .up_c
-        {
-            background-color: #7CFC00; width: auto; height: auto;
-            justify-content: center; padding: 15px;  border-radius: 15px;}
-
-        @media (max-width: 600px) {
-            .grid_2 {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .grid_2A, .grid_2B {
-                width: 90%;
-            }
-        }
-        @media (max-width: 1024px) {
-            body {
-                width: 100%;
-                padding: 0 10px;
-            }
-
-            .grid_2 {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .grid_2A, .grid_2B {
-                width: 80%;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="CSS/index.css">
 </head>
 
 <body>
     <div class="Main_Container">
         <h1 class="grid_1">
-            Welcome to Leaf Doctor 
+            Welcome to Leaf Doctor
         </h1>
 
         <div class="grid_2">
@@ -113,16 +29,73 @@
                 </form>
             </section>
 
-            <!-- Categories Section -->
+            <!-- Information Section -->
             <section class="grid_2B">
-                <p>Categories of Leaves from Plants:</p>
-                <ul>
-                    <li>Tomato</li>
-                    <li>Potato</li>
-                    <li>Pepper Bell</li>
-                    <li>Grape</li>
-                </ul>
-                <img src="Image/Leaf.png" alt="leaf">
+                <div class="grid_2B_1">
+                    <p>Information of Plant Categories and Types of Leaf Diseases:</p>
+                    <div>
+                        <li>Tomato</li>
+                        <li>Potato</li>
+                        <li>Pepper Bell</li>
+                        <li>Grape</li>
+                    </div>
+                </div>
+
+                <div class="grid_2B_2">
+                    <p>Types of Leaf Diseases:</p>
+                </div>
+
+                <section>
+
+                </section>
+
+                <section>
+                    <li>Tomato<img src="image/Tomato.png" alt="tomato" class="body_img" onclick="openPopup()"></li>
+                    <nav class="popup">
+                        <div class="popup-content">
+                            <span class="close-btn" onclick="closePopup()">×</span>
+                            <img src="templates/image/Background.png" alt="Popup Image">
+                            <p>This is some text about the image.</p>
+                        </div>
+                    </nav>
+                </section>
+
+                <section>
+                    <li>Potato<img src="image/Potato.png" alt="potato" class="body_img" onclick="openPopup()"></li>
+                    <nav class="popup">
+                        <div class="popup-content">
+                            <span class="close-btn" onclick="closePopup()">×</span>
+                            <img src="templates/image/Background.png" alt="Popup Image">
+                            <p>This is some text about the image.</p>
+                        </div>
+                    </nav>
+                </section>
+
+                <section>
+                    <li>Pepper Bell<img src="image/Pepper_Bell.png" alt="pepper bell" class="body_img" onclick="openPopup()"></li>
+                    <nav class="popup">
+                        <div class="popup-content">
+                            <span class="close-btn" onclick="closePopup()">×</span>
+                            <img src="templates/image/Background.png" alt="Popup Image">
+                            <p>This is some text about the image.</p>
+                        </div>
+                    </nav>
+
+                </section>
+
+                <section>
+                    <li>Grape<img src="image/Grape.png" alt="grape" class="body_img" onclick="openPopup()"></li>
+                    <nav class="popup">
+                        <div class="popup-content">
+                            <span class="close-btn" onclick="closePopup()">×</span>
+                            <img src="templates/image/Background.png" alt="Popup Image">
+                            <p>This is some text about the image.</p>
+                        </div>
+                    </nav>
+
+                </section>
+
+
             </section>
         </div>
 
@@ -145,6 +118,12 @@
                 reader.readAsDataURL(file);
             }
         }
+
+        function openPopup() {
+            document.getElementById("popup").style.display = "block"; }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none"; }
     </script>
 </body>
 </html>
