@@ -98,6 +98,9 @@ li { /* grid_2B list design */
 .prevention {
     font-size: 14px; color: #333; }
 
+a { /* Navigation and footer*/
+    text-decoration: none; color: #06402B; font-weight: bold; }
+
 
 @media (max-width: 600px) {
     .grid_2 {
