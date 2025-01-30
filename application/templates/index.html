@@ -15,7 +15,6 @@
         <div class="grid_2">
             <!-- Image Upload Section -->
             <section class="grid_2A">
-<!--                {% if image_file/ %}-->
                 <form method="post" enctype="multipart/form-data">
                     <label for="imageUpload" class="text"> Upload an image of the Leaf here!</label>
                     <br>
@@ -26,34 +25,36 @@
                         <img id="imagePreview" src="" alt="Image Preview" class="up_c">
                     </div>
                     <br>
-                    <button type="submit">Predict</button>
+                    <button type="submit" class="submit">Predict</button>
                 </form>
-<!--                {% endif %}-->
             </section>
 
             <!-- Information Section -->
             <section class="grid_2B">
-                <p class="text"> Information of Plant Categories & Leaf Diseases: </p>
-                <br>
-                <div class="plant-box" id="tomato">
-                    <p>Tomato</p>
-                    <img src="../static/images/Tomato.png" alt="Tomato" class="body_img" onclick="openPopup('popupTomato')">
+                <div class="grid_2B_1">
+                    <p class="text"> Information of Plant Categories & Leaf Diseases: </p>
                 </div>
+                <section class="grid_2B_2">
+                    <div class="plant-box" id="tomato">
+                        <p style="font-size: 20px">Tomato</p>
+                        <img src="../static/images/Tomato.png" alt="Tomato" class="body_img" onclick="openPopup('popupTomato')">
+                    </div>
 
-                <div class="plant-box" id="potato">
-                    <p>Potato</p>
-                    <img src="../static/images/Potato.png" alt="Potato" class="body_img" onclick="openPopup('popupPotato')">
-                </div>
+                    <div class="plant-box" id="potato">
+                        <p style="font-size: 20px">Potato</p>
+                        <img src="../static/images/Potato.png" alt="Potato" class="body_img" onclick="openPopup('popupPotato')">
+                    </div>
 
-                <div class="plant-box" id="pepper">
-                    <p>Pepper Bell</p>
-                    <img src="../static/images/Pepper_Bell.png" alt="Pepper Bell" class="body_img" onclick="openPopup('popupPepper')">
-                </div>
+                    <div class="plant-box" id="pepper">
+                        <p style="font-size: 20px">Pepper Bell</p>
+                        <img src="../static/images/Pepper_Bell.png" alt="Pepper Bell" class="body_img" onclick="openPopup('popupPepper')">
+                    </div>
 
-                <div class="plant-box" id="grape">
-                    <p>Grape</p>
-                    <img src="../static/images/Grape.png" alt="Grape" class="body_img" onclick="openPopup('popupGrape')">
-                </div>
+                    <div class="plant-box" id="grape">
+                        <p style="font-size: 20px">Grape</p>
+                        <img src="../static/images/Grape.png" alt="Grape" class="body_img" onclick="openPopup('popupGrape')">
+                    </div>
+                </section>
             </section>
 
             <div id="popupTomato" class="popup">

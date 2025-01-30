@@ -1,24 +1,7 @@
-from flask import Flask, request, redirect, url_for, render_template
-from application import templates
-import os
+from application.config import Config
+from application import create_app
 
-# from pyparsing.diagram import template
+app = create_app(Config)
 
-app = Flask(__name__)
-
-@app.route('/', methods=['GET'])
-def index():
-    # Main page
-    return render_template('index.html') #render home page
-
-
-# @app.route('/home', methods=['GET', 'POST'])
-# def home():
-#     if request.method == 'POST':
-#         file = request.files['image']
-#         if file:
-#             filename = os.path.join('static/uploads', file.filename)
-#             file.save(filename)
-#             # Perform prediction logic here (e.g., call ML model)
-#             return redirect(url_for('home'))
-#     return render_template('index.html')
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)

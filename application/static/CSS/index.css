@@ -30,18 +30,15 @@ h1 { /* format for header */
 .grid_2A { /* Form container */
     display: flex; flex-direction: column; align-items: center;
     justify-content: center; background-color: #336633; width: 50%;
-    height: 430px; padding: 20px; border-radius: 25px; }
+    height: 440px; padding: 20px; border-radius: 25px; }
 
 #imagePreview { /* for my grid_2A, display of the selected image */
     display: none; max-width: 300px; height: auto; border-radius: 4px;
     padding: 5px; margin-top: 10px; }
 
 .grid_2B { /* Categories Section */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    align-items: flex-start; /* Aligns content to the left */
     background-color: #336633; width: 50%; padding: 20px;
-    border-radius: 25px; height: 430px; }
+    border-radius: 25px; height: 440px; display: grid;}
 
 li { /* grid_2B list design */
     text-decoration: none; list-style-type: none; padding: 10px; margin: 5px 0; }
@@ -64,8 +61,8 @@ li { /* grid_2B list design */
     top: 10px; right: 25px; cursor: pointer; }
 
 .plant-box { /* grid_2B */
-    padding: 5px; border-radius: 10px; text-align: center;
-    background-color: #FFFFC5; margin-right: 15px;}
+    padding: 3px; border-radius: 10px; text-align: center;
+    background-color: #FFFFC5; margin-right: 15px; gap:4px; }
 
 .plant-box img { /* image of grid_2B */
     cursor: pointer; display: block; margin: 5px auto; }
@@ -73,13 +70,13 @@ li { /* grid_2B list design */
 .text {
     font-size: 1.5em; color: #F9F6EE; }
 
+.submit {
+    border-radius: 10px; width: 55px; height: 40px;
+    background: #FFFFC5; }
 
-
-
-
-
-
-
+.grid_2B_2 {
+    display: grid;  gap: 10px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */ }
 
 @media (max-width: 600px) {
     .grid_2 {
