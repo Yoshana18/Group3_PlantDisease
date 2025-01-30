@@ -3,7 +3,8 @@
 
 body { /* for the body section*/
     width: 100%; margin: auto; font-family: Arial, sans-serif;
-    background: url('../image/Background.png') no-repeat center center fixed;
+    /*background: url('app/static/images/Background.png') no-repeat center center fixed;*/
+    background: url('../images/Background.png') no-repeat center center fixed;
     background-size: cover; }
 
 .body_img { /* for all the images */
@@ -70,8 +71,7 @@ li { /* grid_2B list design */
     cursor: pointer; display: block; margin: 5px auto; }
 
 .text {
-    font-size: 1.5em; color: #F9F6EE;
-}
+    font-size: 1.5em; color: #F9F6EE; }
 
 
 

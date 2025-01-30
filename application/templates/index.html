@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Leaf-Home</title>
-<!--    <link rel="stylesheet" href="CSS/index.css">-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/index.css') }}">
+    <link rel="stylesheet" href= "../static/CSS/index.css">
 </head>
 
 <body>
@@ -16,6 +15,7 @@
         <div class="grid_2">
             <!-- Image Upload Section -->
             <section class="grid_2A">
+<!--                {% if image_file/ %}-->
                 <form method="post" enctype="multipart/form-data">
                     <label for="imageUpload" class="text"> Upload an image of the Leaf here!</label>
                     <br>
@@ -28,6 +28,7 @@
                     <br>
                     <button type="submit">Predict</button>
                 </form>
+<!--                {% endif %}-->
             </section>
 
             <!-- Information Section -->
@@ -36,22 +37,22 @@
                 <br>
                 <div class="plant-box" id="tomato">
                     <p>Tomato</p>
-                    <img src="image/Tomato.png" alt="Tomato" class="body_img" onclick="openPopup('popupTomato')">
+                    <img src="../static/images/Tomato.png" alt="Tomato" class="body_img" onclick="openPopup('popupTomato')">
                 </div>
 
                 <div class="plant-box" id="potato">
                     <p>Potato</p>
-                    <img src="image/Potato.png" alt="Potato" class="body_img" onclick="openPopup('popupPotato')">
+                    <img src="../static/images/Potato.png" alt="Potato" class="body_img" onclick="openPopup('popupPotato')">
                 </div>
 
                 <div class="plant-box" id="pepper">
                     <p>Pepper Bell</p>
-                    <img src="image/Pepper_Bell.png" alt="Pepper Bell" class="body_img" onclick="openPopup('popupPepper')">
+                    <img src="../static/images/Pepper_Bell.png" alt="Pepper Bell" class="body_img" onclick="openPopup('popupPepper')">
                 </div>
 
                 <div class="plant-box" id="grape">
                     <p>Grape</p>
-                    <img src="image/Grape.png" alt="Grape" class="body_img" onclick="openPopup('popupGrape')">
+                    <img src="../static/images/Grape.png" alt="Grape" class="body_img" onclick="openPopup('popupGrape')">
                 </div>
             </section>
 
@@ -61,14 +62,14 @@
                     <div>
                         These are the reference images for 8 types of leaf disease in Tomato
                         <br>
-                        <img src="image/Tomato/Tomato_Bacterial_spot(2).JPG" alt="Popup Image">
-                        <img src="image/Tomato/Tomato_Early_blight(2).JPG" alt="Popup Image">
-                        <img src="image/Tomato/Tomato_Late_blight(2).JPG" alt="Popup Image">
-                        <img src="image/Tomato/Tomato_Leaf_Mold(2).JPG" alt="Popup Image">
-                        <img src="image/Tomato/Tomato_Septoria_leaf_spot(2).JPG" alt="Popup Image">
-                        <img src="image/Tomato/Tomato_Spider_mites_Two_spotted_spider_mite(2).JPG" alt="Popup Image">
-                        <img src="image/Tomato/Tomato_Target_Spot(2).JPG" alt="Popup Image">
-                        <img src="image/Tomato/Tomato_Tomato_mosaic_virus(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Tomato/Tomato_Bacterial_spot(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Tomato/Tomato_Early_blight(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Tomato/Tomato_Late_blight(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Tomato/Tomato_Leaf_Mold(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Tomato/Tomato_Septoria_leaf_spot(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Tomato/Tomato_Spider_mites_Two_spotted_spider_mite(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Tomato/Tomato_Target_Spot(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Tomato/Tomato_Tomato_mosaic_virus(2).JPG" alt="Popup Image">
                     </div>
                 </div>
             </div>
@@ -79,8 +80,8 @@
                     <div>
                         These are the reference images for 2 types of leaf disease in Potato
                         <br>
-                        <img src="image/Potato/Potato_Early_blight(2).JPG" alt="Popup Image">
-                        <img src="image/Potato/Potato_Late_blight(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Potato/Potato_Early_blight(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Potato/Potato_Late_blight(2).JPG" alt="Popup Image">
                     </div>
                 </div>
             </div>
@@ -91,7 +92,7 @@
                     <div>
                         These are the reference images for a type of leaf disease in Pepper Bell
                         <br>
-                        <img src="image/Pepper Bell/Pepper_bell_Bacterial_spot(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Pepper Bell/Pepper_bell_Bacterial_spot(2).JPG" alt="Popup Image">
                     </div>
                 </div>
             </div>
@@ -102,9 +103,9 @@
                     <div>
                         These are the reference images for the 3 classes of leaf diseases in Grapes.
                         <br>
-                        <img src="image/Grapes/Grape_Black_rot(2).JPG" alt="Popup Image">
-                        <img src="image/Grapes/Grape_Esca_(Black_Measles)(2).JPG" alt="Popup Image">
-                        <img src="image/Grapes/Grape_Leaf_blight_(Isariopsis_Leaf_Spot)(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Grapes/Grape_Black_rot(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Grapes/Grape_Esca_(Black_Measles)(2).JPG" alt="Popup Image">
+                        <img src="../static/images/Grapes/Grape_Leaf_blight_(Isariopsis_Leaf_Spot)(2).JPG" alt="Popup Image">
                     </div>
                 </div>
             </div>
