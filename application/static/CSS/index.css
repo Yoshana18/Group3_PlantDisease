@@ -101,7 +101,6 @@ li { /* grid_2B list design */
 a { /* Navigation and footer*/
     text-decoration: none; color: #06402B; font-weight: bold; }
 
-
 @media (max-width: 600px) {
     .grid_2 {
         flex-direction: column;
