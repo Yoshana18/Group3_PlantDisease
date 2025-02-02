@@ -20,6 +20,10 @@ h1 { /* format for header */
     display: flex; justify-content: center; align-items: center;
     padding: 20px; color: black; text-align: center; font-size: 45px ;}
 
+h3 {
+    font-size: 1 em; color: #F9F6EE;
+}
+
 .Main_Container { /* grid display for the body */
     display: grid; grid-template-rows: 100px auto 100px; }
 
@@ -30,7 +34,7 @@ h1 { /* format for header */
 .grid_2A { /* Form container */
     display: flex; flex-direction: column; align-items: center;
     justify-content: center; background-color: #336633; width: 50%;
-    height: 440px; padding: 20px; border-radius: 25px; }
+    height: 460px; padding: 20px; border-radius: 25px; }
 
 #imagePreview { /* for my grid_2A, display of the selected image */
     display: none; max-width: 300px; height: auto; border-radius: 4px;

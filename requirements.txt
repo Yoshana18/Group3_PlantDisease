@@ -1,7 +1,6 @@
 Flask==3.0.3
-Flask-WTF==1.2.1
-WTForms==3.1.2
-Flask-SQLAlchemy==3.1.1
-SQLAlchemy==2.0.32
-Werkzeug==3.0.4
-Flask-Login==0.6.3
+keras==3.8.0
+tensorflow==2.18.0
+numpy==2.0.2
+werkzeug==3.0.4
+keras-models==0.0.7
