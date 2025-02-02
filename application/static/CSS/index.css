@@ -34,7 +34,7 @@ h3 {
 .grid_2A { /* Form container */
     display: flex; flex-direction: column; align-items: center;
     justify-content: center; background-color: #336633; width: 50%;
-    height: 460px; padding: 20px; border-radius: 25px; }
+    height: 470px; padding: 20px; border-radius: 25px; }
 
 #imagePreview { /* for my grid_2A, display of the selected image */
     display: none; max-width: 300px; height: auto; border-radius: 4px;
@@ -42,7 +42,7 @@ h3 {
 
 .grid_2B { /* Categories Section */
     background-color: #336633; width: 50%; padding: 20px;
-    border-radius: 25px; height: 440px; display: grid;}
+    border-radius: 25px; height: 470px; display: grid;}
 
 li { /* grid_2B list design */
     text-decoration: none; list-style-type: none; padding: 10px; margin: 5px 0; }
@@ -79,7 +79,7 @@ li { /* grid_2B list design */
 
 .submit {
     border-radius: 10px; width: 55px; height: 40px;
-    background: #FFFFC5; }
+    background: #A8BCAB; }
 
 .grid_2B_2 {
     display: grid;  gap: 10px;

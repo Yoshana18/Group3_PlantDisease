@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Leaf-Home</title>
-    <link rel="stylesheet" href= "../static/CSS/index.css">
-    <script src="../static/js/index.js" type="text/javascript"></script>
-
+    <link rel="stylesheet" href="../static/CSS/index.css">
 </head>
 
 <body>
@@ -15,29 +13,27 @@
         </h1>
 
         <div class="grid_2">
-            <!-- Image Upload Section -->
-                        <!-- Image Upload Section -->
             <section class="grid_2A">
-                <label for="imageUpload" class="text"> Upload an image of the Leaf here!</label><br>
-                <form method="post" enctype="multipart/form-data" id="upload-file">
+                <label for="imageUpload" class="text">Upload an image of the Leaf here!</label><br>
+                <form action="/predict" method="post" enctype="multipart/form-data" id="upload-file">
                     <div class="up_c">
-                        <input type="file" id="imageUpload" name="image" accept="image/*" onchange="previewImage(event)" required>
+                        <input type="file" id="imageUpload" name="file" accept="image/*" required onchange="previewImage()">
+                        <br><br>
+                        <section class="image-preview">
+                            <img id="preview" src="#" alt="Image Preview" style="display: none; width: 100%; max-width: 200px;">
+                        </section>
                         <br>
-                        <img id="imagePreview" src="" alt="Image Preview" class="up_c">
+                        <input type="submit" class="submit" value="Predict" id="btn-predict">
+                        <br>
                     </div>
                 </form>
                 <br>
-                <div class="result">
-                    <button type="submit" class="submit" id="btn-predict">Predict!</button>
-                </div>
-                <h3 id="result">
-                    <span></span>
-                </h3>
-
+                <section class="result">
+                    <h3 id="prediction-result"></h3>
+                </section>
             </section>
 
-
-            <!-- Information Section -->
+            <!-- Additional sections for plant information, popups, etc. -->
             <section class="grid_2B">
                 <div class="grid_2B_1">
                     <p class="text"> Information of Plant Categories & Leaf Diseases: </p>
@@ -170,9 +166,62 @@
             </div>
         </div>
 
+
         <footer class="grid_3">
             @COPYRIGHTS - Group 3: Jiawen, Yen Yi, Yoshana
         </footer>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        // Function to preview the selected image
+        function previewImage() {
+            var file = document.getElementById("imageUpload").files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                var img = document.getElementById("preview");
+                img.src = reader.result;  // Set the source to the selected file
+                img.style.display = "block";  // Make the image visible
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);  // Read the image file as a data URL
+            }
+        }
+
+        // Handle form submission with AJAX
+        $('#upload-file').on('submit', function(e) {
+            e.preventDefault();  // Prevent the default form submission
+
+            var formData = new FormData(this);  // Create FormData object from the form
+
+            $.ajax({
+                url: '/predict',  // Flask route to send the request to
+                type: 'POST',
+                data: formData,
+                contentType: false,  // Let the browser set the content type
+                processData: false,  // Don't process the data
+                success: function(response) {
+                    // Display the result in the "prediction-result" section
+                    $('#prediction-result').html('<strong>Prediction: </strong>' + response.result);
+                },
+                error: function() {
+                    // Handle any errors
+                    $('#prediction-result').html('<strong>Error:</strong> Could not process the image.');
+                }
+            });
+        });
+
+        function openPopup(popupId) {
+            document.getElementById(popupId).style.display = "block";
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = "none";
+        }
+    </script>
+
 </body>
 </html>
