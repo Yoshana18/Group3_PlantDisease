@@ -8,7 +8,7 @@ from werkzeug.utils import secure_filename
 auth = Blueprint('auth', __name__)
 
 # Loading the model here!
-model_path = r"C:\Users\Yoshana\Documents\GitHub\CV-Project\Plant_Trial2\application\my_model.keras"
+model_path = r"C:\Users\Yoshana\Documents\GitHub\CV-Project\Plant_Trial2\application\this_works.keras"
 print("File exists:", os.path.exists(model_path))
 model = load_model(model_path)
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
