@@ -16,7 +16,6 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 # for the prediction of the model to run later
 def model_predict(image_path, model):
     img = image.load_img(image_path, color_mode='rgb', target_size=(150, 150))
-    show_img = image.load_img(image_path, color_mode='rgb', target_size=(150, 150))
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x /= 255
@@ -55,9 +54,19 @@ def upload():
                            'Tomato - Target Spot', 'Tomato - Healthy']
 
         a = preds[0]
-        ind = np.argmax(a)
-        print('Prediction:', disease_classes[ind])
-        result = disease_classes[ind]
-        return jsonify({'result': result})
+        # ind = np.argmax(a)
+
+        probabilities = preds[0]
+        max_index = np.argmax(probabilities)
+        max_confidence = probabilities[max_index]
+
+        # Set confidence threshold (adjust as needed)
+        CONFIDENCE_THRESHOLD = 0.8
+
+        if max_confidence < CONFIDENCE_THRESHOLD:
+            return jsonify({'result': 'Unknown, please try again'})
+
+        result = disease_classes[max_index]
+        return jsonify({'result': result, 'confidence': float(max_confidence)})
     return None
 

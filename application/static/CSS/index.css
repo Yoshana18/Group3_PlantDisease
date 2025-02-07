@@ -3,7 +3,6 @@
 
 body { /* for the body section*/
     width: 100%; margin: auto; font-family: Arial, sans-serif;
-    /*background: url('app/static/images/Background.png') no-repeat center center fixed;*/
     background: url('../images/Background.png') no-repeat center center fixed;
     background-size: cover; }
 
