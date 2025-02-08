@@ -61,7 +61,7 @@ def upload():
         max_confidence = probabilities[max_index]
 
         # Set confidence threshold (adjust as needed)
-        CONFIDENCE_THRESHOLD = 0.8
+        CONFIDENCE_THRESHOLD = 0.6
 
         if max_confidence < CONFIDENCE_THRESHOLD:
             return jsonify({'result': 'Unknown, please try again'})
