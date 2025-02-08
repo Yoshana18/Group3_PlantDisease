@@ -53,17 +53,15 @@ def upload():
                            'Tomato - Late Blight', 'Tomato - Leaf Mold', 'Tomato - Septoria leaf spot',
                            'Tomato - Target Spot', 'Tomato - Healthy']
 
-        a = preds[0]
-        # ind = np.argmax(a)
-
         probabilities = preds[0]
         max_index = np.argmax(probabilities)
         max_confidence = probabilities[max_index]
 
+        print(max_confidence)
         # Set confidence threshold (adjust as needed)
-        CONFIDENCE_THRESHOLD = 0.6
+        confidence_threshold = 0.9
 
-        if max_confidence < CONFIDENCE_THRESHOLD:
+        if max_confidence < confidence_threshold:
             return jsonify({'result': 'Unknown, please try again'})
 
         result = disease_classes[max_index]
